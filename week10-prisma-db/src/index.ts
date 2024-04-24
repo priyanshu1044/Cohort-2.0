@@ -1,25 +1,15 @@
 import { PrismaClient } from "@prisma/client";
+import { get } from "http";
 
 const prisma = new PrismaClient();
 
-interface UpdateParams {
-    firstName: string;
-    lastName: string;
+async function getUser(username: string) {
+    const res=await prisma.user.findUnique({
+        where: {
+            username
+        }
+    });
+    console.log(res);
 }
 
-async function updateUser(username: string, {
-    firstName,
-    lastName
-}: UpdateParams) {
-  const res=await prisma.user.update({
-    where: { username },
-    data: { firstName, lastName }
-  });
-
-  console.log(res);
-}
-
-updateUser("admin1", {
-  firstName: "Luffy",
-  lastName: "Monkey D"
-})
+getUser("admin1")
