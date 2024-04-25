@@ -13,25 +13,17 @@ To access the code for a specific week, switch to the corresponding branch. For 
 - [Week 10 - Database Prisma and PostgreSQL Learning 🗃️](#week-10---database-prisma-and-postgresql-learning)
 - [Week 11 - Serverless Backends 🌐](#week-11---serverless-backends)
 
----
-
 ## Week 08 - Paytm Project 💰
 
 This week's focus is on a project involving integrating with the Paytm payment gateway. Access the code and related files in the `week08` directory.
-
----
 
 ## Week 09 - TypeScript Learning 📝
 
 This week delves into TypeScript, a statically typed superset of JavaScript. Explore learning materials and exercises in the `week09` directory.
 
----
-
 ## Week 10 - Database Prisma and PostgreSQL Learning 🗃️
 
 Week 10 explores database management using Prisma and PostgreSQL. Discover resources and exercises in the `week10` directory.
-
----
 
 ## Week 11 - Serverless Backends 🌐
 
