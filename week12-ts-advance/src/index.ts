@@ -1,42 +1,30 @@
-// //readonly 
-// type User={
-//     readonly name:string;
-//     readonly age:number;
-// }
+import { z } from 'zod';
+import express from "express";
 
-// let user:User={
-//     name:"John",
-//     age:30
-// }
+const app = express();
 
-// user.name="Jane"; //error
+// Define the schema for profile update
+const userProfileSchema = z.object({
+  name: z.string().min(1, { message: "Name cannot be empty" }),
+  email: z.string().email({ message: "Invalid email format" }),
+  age: z.number().min(18, { message: "You must be at least 18 years old" }).optional(),
+});
 
-// =========================================
+export type userProfileType = z.infer<typeof userProfileSchema>;
 
-//readonly 
-type User={
-    name:string;
-    age:number;
-}
+app.put("/user", (req, res) => {
+  const { success } = userProfileSchema.safeParse(req.body);
+  const updateBody:userProfileType = req.body; // how to assign a type to updateBody?
 
-let user:Readonly<User>={
-    name:"John",
-    age:30
-}
-
-user.name="Jane"; //error
-
-
-// =========================================
-
-interface Config {
-    readonly endpoint: string;
-    readonly apiKey: string;
+  if (!success) {
+    res.status(411).json({});
+    return
   }
-  
-  const config: Readonly<Config> = {
-    endpoint: 'https://api.example.com',
-    apiKey: 'abcdef123456',
-  };
-  
-  config.apiKey = 'newkey'; // Error: Cannot assign to 'apiKey' because it is a read-only property.
+  // update database here
+  res.json({
+    message: "User updated"
+  })
+});
+
+app.listen(3000);
+
