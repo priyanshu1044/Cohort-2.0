@@ -1,24 +1,42 @@
-interface User {
-    id: number;
-    name: string;
-    age: number;
-    email: string;
-    password: string;
+// //readonly 
+// type User={
+//     readonly name:string;
+//     readonly age:number;
+// }
+
+// let user:User={
+//     name:"John",
+//     age:30
+// }
+
+// user.name="Jane"; //error
+
+// =========================================
+
+//readonly 
+type User={
+    name:string;
+    age:number;
+}
+
+let user:Readonly<User>={
+    name:"John",
+    age:30
+}
+
+user.name="Jane"; //error
+
+
+// =========================================
+
+interface Config {
+    readonly endpoint: string;
+    readonly apiKey: string;
   }
   
-  // Pick is a utility type that allows you to create a new type by picking the properties you want to include in the new type
-  type UpdateProps = Pick<User, 'name' | 'age' | 'email'>;
-
-  // Partial is a utility type that makes all properties of an object optional
-  type UpdatePropsOptional = Partial<User>;
-
-
-  
-  const updateUserProfile = (user: UpdatePropsOptional) => {
-
+  const config: Readonly<Config> = {
+    endpoint: 'https://api.example.com',
+    apiKey: 'abcdef123456',
   };
-
-  updateUserProfile({ name: 'John'});
-
-
   
+  config.apiKey = 'newkey'; // Error: Cannot assign to 'apiKey' because it is a read-only property.
