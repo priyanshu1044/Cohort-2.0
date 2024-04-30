@@ -35,5 +35,10 @@ In Week 11, we cover serverless backends, focusing on reducing server management
 
 - Deploying frontend on AWS S3
 - Learning about TS advance API
+- Created a NPM package by self
+- Learn about the Actionable Docker
+- Learn SQL Injection, Join, and Relation
+- Learn about the ORM and Prisma
+- Connection pooling in serverless envs
 
 Explore more in the `week12` branch.
