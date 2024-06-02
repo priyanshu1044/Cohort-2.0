@@ -1,44 +1,41 @@
-# 📚 Harkirat's Course
+# Week 15 - Docker
 
-Welcome to Harkirat's Course repository, where you can find all the code, projects, and learning materials related to the course. 🎓
+## Command to Run MongoDB
 
-## 📂 How to Access the Code
+To run MongoDB using Docker, execute the following command:
 
-To access the code for a specific week, switch to the corresponding branch. For instance, to view Week 08's code, switch to the `week08` branch. 🚀
+```bash
+docker run -d -p 27017:27017 mongo
+```
 
-## 📋 Table of Contents
-
-- [Week 08 - Paytm Project 💰](#week-08---paytm-project-💰)
-- [Week 09 - TypeScript Learning 📝](#week-09---typescript-learning-📝)
-- [Week 10 - Database Prisma and PostgreSQL Learning 🗃️](#week-10---database-prisma-and-postgresql-learning-🗃️)
-- [Week 11 - Serverless Backends 🌐](#week-11---serverless-backends-🌐)
-- [Week 12](#week-12)
-
-## Week 08 - Paytm Project 💰
-
-This week's focus is on a project involving integrating with the Paytm payment gateway. Access the code and related files in the `week08` branch.
-
-## Week 09 - TypeScript Learning 📝
-
-This week delves into TypeScript, a statically typed superset of JavaScript. Explore learning materials and exercises in the `week09` branch.
-
-## Week 10 - Database Prisma and PostgreSQL Learning 🗃️
-
-Week 10 explores database management using Prisma and PostgreSQL. Discover resources and exercises in the `week10` branch.
-
-## Week 11 - Serverless Backends 🌐
-
-In Week 11, we cover serverless backends, focusing on reducing server management overhead. Learn about Cloudflare Workers and serverless computing services. Explore more in the `week11` branch. 💻
+As an application/full stack developer, you need to be comfortable with the following terminologies -
 
 
-## Week 12
+- Docker Engine
+- Docker CLI - Command line interface
+- Docker registry
 
-- Deploying frontend on AWS S3
-- Learning about TS advance API
-- Created a NPM package by self
-- Learn about the Actionable Docker
-- Learn SQL Injection, Join, and Relation
-- Learn about the ORM and Prisma
-- Connection pooling in serverless envs
+![alt text](image-1.png)
 
-Explore more in the `week12` branch.
+## Images vs containers
+Docker Image
+- A Docker image is a lightweight, standalone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.
+
+ 
+Docker Container
+- A container is a running instance of an image. It encapsulates the application or service and its dependencies, running in an isolated environment.
+
+![alt text](image.png)
+
+## Port mapping
+
+```bash
+docker run -d -p 27018:27017 mongo
+```
+![alt text](image-2.png)
+
+## Common docker commands
+- docker images
+- docker ps
+- docker run
+- docker build
