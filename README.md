@@ -15,7 +15,7 @@ As an application/full stack developer, you need to be comfortable with the foll
 - Docker CLI - Command line interface
 - Docker registry
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 ## Images vs containers
 Docker Image
@@ -25,14 +25,14 @@ Docker Image
 Docker Container
 - A container is a running instance of an image. It encapsulates the application or service and its dependencies, running in an isolated environment.
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 ## Port mapping
 
 ```bash
 docker run -d -p 27018:27017 mongo
 ```
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 ## Common docker commands
 - docker images
