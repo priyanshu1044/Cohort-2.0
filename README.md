@@ -1,44 +1,62 @@
-# 📚 Harkirat's Course
+# 🚀 Monorepo Example with TurboRepo
 
-Welcome to Harkirat's Course repository, where you can find all the code, projects, and learning materials related to the course. 🎓
+Welcome to the Monorepo example using TurboRepo. This README provides an overview of the benefits of monorepos, introduces common monorepo frameworks in Node.js, and explains the difference between build systems, build system orchestrators, and monorepo frameworks. Additionally, it outlines how to initialize a simple Turborepo.
 
-## 📂 How to Access the Code
+## 🌟 Why Monorepos?
 
-To access the code for a specific week, switch to the corresponding branch. For instance, to view Week 08's code, switch to the `week08` branch. 🚀
+### 1. 🔄 Shared Code Reuse
+- Monorepos facilitate code reuse across different parts of your project, reducing duplication and improving maintainability.
 
-## 📋 Table of Contents
+### 2. 🤝 Enhanced Collaboration
+- With a single repository, team collaboration is streamlined, making it easier to coordinate changes and manage dependencies.
 
-- [Week 08 - Paytm Project 💰](#week-08---paytm-project-💰)
-- [Week 09 - TypeScript Learning 📝](#week-09---typescript-learning-📝)
-- [Week 10 - Database Prisma and PostgreSQL Learning 🗃️](#week-10---database-prisma-and-postgresql-learning-🗃️)
-- [Week 11 - Serverless Backends 🌐](#week-11---serverless-backends-🌐)
-- [Week 12](#week-12)
+### 3. ⚡ Optimized Builds and CI/CD
+- Tools like TurboRepo offer smart caching and task execution strategies that significantly reduce build and testing times.
 
-## Week 08 - Paytm Project 💰
+### 4. 🛠️ Centralized Tooling and Configuration
+- Managing build tools, linters, formatters, and other configurations is simpler in a monorepo, as you can use a single set of tools for the entire project.
 
-This week's focus is on a project involving integrating with the Paytm payment gateway. Access the code and related files in the `week08` branch.
+## 📚 Common Monorepo Frameworks in Node.js
 
-## Week 09 - TypeScript Learning 📝
+- **Lerna**: [lerna.js.org](https://lerna.js.org/)
+- **Nx**: [github.com/nrwl/nx](https://github.com/nrwl/nx)
+- **Turborepo**: [turbo.build](https://turbo.build/) (Not exactly a monorepo framework but a build system orchestrator)
+- **Yarn/npm Workspaces**: [classic.yarnpkg.com](https://classic.yarnpkg.com/lang/en/docs/workspaces/)
 
-This week delves into TypeScript, a statically typed superset of JavaScript. Explore learning materials and exercises in the `week09` branch.
+## 🛠️ Build System vs. Build System Orchestrator vs. Monorepo Framework
 
-## Week 10 - Database Prisma and PostgreSQL Learning 🗃️
+### Build System
+A build system automates the process of transforming source code into executable code. For JavaScript and TypeScript projects, this can include:
+- Transpilation (e.g., TS to JS)
+- Bundling (combining multiple files)
+- Minification (reducing file size)
+- Running tests
+- Linting
+- Deploying applications
 
-Week 10 explores database management using Prisma and PostgreSQL. Discover resources and exercises in the `week10` branch.
+### Build System Orchestrator
+A build system orchestrator like TurboRepo does not directly perform tasks such as transpilation or bundling. Instead, it defines and manages tasks that call other tools (the actual build systems) to perform these actions. 
 
-## Week 11 - Serverless Backends 🌐
+### Monorepo Framework
+A monorepo framework provides tools and conventions for managing multiple packages or applications within a single repository. This includes dependency management and workspace configuration.
 
-In Week 11, we cover serverless backends, focusing on reducing server management overhead. Learn about Cloudflare Workers and serverless computing services. Explore more in the `week11` branch. 💻
+## 🏎️ Turborepo as a Build System Orchestrator
 
+TurboRepo is a build system orchestrator with key features that include:
 
-## Week 12
+### 📦 Caching
+- TurboRepo caches task outputs, allowing it to skip re-execution and use cached results if inputs haven't changed. This speeds up build times, especially in CI environments.
 
-- Deploying frontend on AWS S3
-- Learning about TS advance API
-- Created a NPM package by self
-- Learn about the Actionable Docker
-- Learn SQL Injection, Join, and Relation
-- Learn about the ORM and Prisma
-- Connection pooling in serverless envs
+### ⚙️ Parallelization
+- TurboRepo can run independent tasks in parallel, efficiently using machine resources and reducing the overall time needed for project tasks.
 
-Explore more in the `week12` branch.
+### 🕸️ Dependency Graph Awareness
+- TurboRepo understands the dependency graph of your monorepo, ensuring tasks are run in the correct order based on package dependencies.
+
+## 🛠️ Initialize a Simple Turborepo
+
+To initialize a simple Turborepo, run the following command:
+
+```bash
+npx create-turbo@latest
+```
