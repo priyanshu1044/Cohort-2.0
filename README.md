@@ -1,44 +1,26 @@
-# 📚 Harkirat's Course
+# Kubernetes Cluster Components
 
-Welcome to Harkirat's Course repository, where you can find all the code, projects, and learning materials related to the course. 🎓
+## Master Node
 
-## 📂 How to Access the Code
+The master node is responsible for managing the Kubernetes cluster. It includes the following components:
 
-To access the code for a specific week, switch to the corresponding branch. For instance, to view Week 08's code, switch to the `week08` branch. 🚀
+- **API Server**: The front-end for the Kubernetes control plane.
+- **Scheduler**: Assigns workloads to specific nodes based on resource availability.
+- **etcd**: A consistent and highly-available key-value store used for all cluster data.
+- **Kube-Controller-Manager**: Runs controller processes to regulate the state of the cluster.
 
-## 📋 Table of Contents
+## Worker Node
 
-- [Week 08 - Paytm Project 💰](#week-08---paytm-project-💰)
-- [Week 09 - TypeScript Learning 📝](#week-09---typescript-learning-📝)
-- [Week 10 - Database Prisma and PostgreSQL Learning 🗃️](#week-10---database-prisma-and-postgresql-learning-🗃️)
-- [Week 11 - Serverless Backends 🌐](#week-11---serverless-backends-🌐)
-- [Week 12](#week-12)
+Worker nodes run the applications and workloads. They include the following components:
 
-## Week 08 - Paytm Project 💰
+- **Kubelets**: An agent that communicates with the API server to ensure containers are running as expected.
+- **Kube-Proxy**: Maintains network rules on nodes and allows network communication to your pods.
+- **Container Runtime**: The software that runs containers, such as Docker or containerd.
 
-This week's focus is on a project involving integrating with the Paytm payment gateway. Access the code and related files in the `week08` branch.
+## Detailed Descriptions
 
-## Week 09 - TypeScript Learning 📝
-
-This week delves into TypeScript, a statically typed superset of JavaScript. Explore learning materials and exercises in the `week09` branch.
-
-## Week 10 - Database Prisma and PostgreSQL Learning 🗃️
-
-Week 10 explores database management using Prisma and PostgreSQL. Discover resources and exercises in the `week10` branch.
-
-## Week 11 - Serverless Backends 🌐
-
-In Week 11, we cover serverless backends, focusing on reducing server management overhead. Learn about Cloudflare Workers and serverless computing services. Explore more in the `week11` branch. 💻
+- **Kubelets**: This process communicates with the API server on the master node to check if it needs to run any containers.
+- **Scheduler**: Schedules the pods and updates etcd with information about which node is running each pod.
+- **etcd**: Stores all cluster data as key-value pairs.
 
 
-## Week 12
-
-- Deploying frontend on AWS S3
-- Learning about TS advance API
-- Created a NPM package by self
-- Learn about the Actionable Docker
-- Learn SQL Injection, Join, and Relation
-- Learn about the ORM and Prisma
-- Connection pooling in serverless envs
-
-Explore more in the `week12` branch.
